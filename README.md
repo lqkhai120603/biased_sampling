@@ -62,8 +62,8 @@ This repository implements the Probabilistic Roadmap (PRM) algorithm and compare
 - [x] Measure runtime execution for distinct phases (Sampling, Edge Connection, Pathfinding).
 
 ### 4. Benchmarking & Visualization
-- [ ] Design custom 2D test maps featuring varying widths of narrow passages.
-- [ ] Write an automated benchmarking script: Execute 100+ runs per sampler across different maps to calculate the success rate.
+- [x] Design custom 2D test maps featuring varying widths of narrow passages.
+- [x] Write an automated benchmarking script: Execute 100+ runs per sampler across different maps to calculate the success rate.
 - [x] Write a script to export benchmark results to CSV format.
-- [ ] Write a visualization script (`matplotlib`/`seaborn`) to render the 2D map and the generated roadmaps.
+- [x] Write a visualization script (`matplotlib`/`seaborn`) to render the 2D map and the generated roadmaps.
 - [x] Generate statistical plots comparing Uniform, Heuristic, and CVAE samplers based on runtime and collision checks.

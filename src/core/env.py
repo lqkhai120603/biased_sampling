@@ -3,16 +3,19 @@
 from __future__ import annotations
 
 from typing import List
+
 from shapely.geometry import box, Polygon, Point, LineString
 
 from src.core.state import State
+from src.core.state_space import RealVectorStateSpace
+from src.samplers.space_info import SpaceInformation
 
 
 class Environment2D:
     def __init__(self, x_min, x_max, y_min, y_max):
         if x_min >= x_max or y_min >= y_max:
             raise ValueError("Invalid environment bounds.")
-        
+
         self.x_min = float(x_min)
         self.x_max = float(x_max)
         self.y_min = float(y_min)
@@ -34,8 +37,8 @@ class Environment2D:
             raise TypeError("Expected a State instance.")
         if state.dimension != 2:
             raise ValueError("Environment2D requires 2D states.")
-        
-        point = Point(float(state[0]), float(state[0]))
+
+        point = Point(float(state[0]), float(state[1]))
 
         if not self.boundary.covers(point):
             return False
@@ -61,7 +64,6 @@ class Environment2D:
 
     def create_state_space(self):
         """Create a state space matching the environment bounds"""
-        from src.core.state_space import RealVectorStateSpace
 
         space = RealVectorStateSpace(2)
         space.set_bounds(
@@ -72,7 +74,6 @@ class Environment2D:
 
     def create_space_information(self):
         """Create space information using collision checker"""
-        from src.samplers.space_info import SpaceInformation
 
         space = self.create_state_space()
         return SpaceInformation(

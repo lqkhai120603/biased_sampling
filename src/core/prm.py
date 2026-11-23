@@ -118,8 +118,8 @@ class PRM2D:
                 attempts += 1
                 # Sampling phase
                 sampling_start = time.perf_counter()
-                self.sampling_time += time.perf_counter() - sampling_start
                 q_rand = self._sample_valid_state()
+                self.sampling_time += time.perf_counter() - sampling_start
                 if q_rand is None:
                     continue
 

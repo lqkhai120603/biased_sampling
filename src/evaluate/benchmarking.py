@@ -5,7 +5,7 @@ import numpy as np
 from matplotlib.collections import LineCollection
 from matplotlib.patches import Polygon as MplPolygon
 
-from core import Environment2D, State
+from src.core import Environment2D, State
 
 
 def visualize_prm(env, graph, q_start, q_goal, path=None, title="PRM Roadmap", save_path=None):

@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from evaluate.benchmarking import create_single_passage_map, create_z_corridor_map, create_bug_trap_map
-from samplers import GaussianValidStateSampler, BridgeTestValidStateSampler
+from src.evaluate.benchmarking import create_single_passage_map, create_z_corridor_map, create_bug_trap_map
+from src.samplers import GaussianValidStateSampler, BridgeTestValidStateSampler
 from src.core.graph import NodeGraph
 from src.core.prm import PRM2D
 from src.samplers.uniform import UniformValidStateSampler
